@@ -437,16 +437,69 @@ F4U_1D:definePotentiometer("MIRROR_ADJUST_RIGHT", devices.UTILITY, 3456, 801, { 
 F4U_1D:definePotentiometer("MIRROR_ADJUST_LEFT", devices.UTILITY, 3457, 802, { -1, 1 }, CANOPY, "Adjust Left Mirror")
 
 -- Flood Lights
--- local INTERIOR_LIGHTS = "Interior Lights"
+local INTERIOR_LIGHTS = "Interior Lights"
+
+F4U_1D:definePotentiometer("INTERIOR_PANEL_LAMP_LEFT", devices.LIGHTS, 3751, 738, { 0, 1 }, INTERIOR_LIGHTS, "Left Panel Lamp UV/White")
+F4U_1D:definePotentiometer("INTERIOR_PANEL_LAMP_RIGHT", devices.LIGHTS, 3752, 739, { 0, 1 }, INTERIOR_LIGHTS, "Right Panel Lamp UV/White")
+F4U_1D:definePotentiometer("INTERIOR_INSTRUMENT_BOARD_LAMP_LEFT", devices.LIGHTS, 3753, 740, { 0, 1 }, INTERIOR_LIGHTS, "Left Instrument Board Lamp UV/White")
+F4U_1D:definePotentiometer("INTERIOR_INSTRUMENT_BOARD_LAMP_RIGHT", devices.LIGHTS, 3754, 741, { 0, 1 }, INTERIOR_LIGHTS, "Right Instrument Board Lamp UV/White")
+F4U_1D:defineFloat("INTERIOR_CHARTBOARD_LAMP_BRIGHTNESS", 637, { 0, 1 }, INTERIOR_LIGHTS, "Chartboard Lamp Brightness")
+F4U_1D:defineIndicatorLight("INTERIOR_PANEL_LAMP_ON_OFF_LEFT", 638, INTERIOR_LIGHTS, "Left Panel Lamp On/Off ")
+F4U_1D:defineIndicatorLight("INTERIOR_PANEL_LAMP_ON_OFF_RIGHT", 639, INTERIOR_LIGHTS, "Right Panel Lamp On/Off")
+F4U_1D:defineIndicatorLight("INTERIOR_INSTRUMENT_BOARD_LAMP_ON_OFF_LEFT", 640, INTERIOR_LIGHTS, "Left Instrument Board Lamp On/Off")
+F4U_1D:defineIndicatorLight("INTERIOR_INSTRUMENT_BOARD_LAMP_ON_OFF_RIGHT", 641, INTERIOR_LIGHTS, "Right Instrument Board Lamp On/Off")
+F4U_1D:defineFloat("INTERIOR_PANEL_LAMP_BRIGHTNESS_UV_LEFT", 838, { 0, 1 }, INTERIOR_LIGHTS, "Left Panel Brightness (UV)")
+F4U_1D:defineFloat("INTERIOR_PANEL_LAMP_BRIGHTNESS_UV_RIGHT", 839, { 0, 1 }, INTERIOR_LIGHTS, "Right Panel Brightness (UV)")
+F4U_1D:defineFloat("INTERIOR_INSTRUMENT_BOARD_LAMP_BRIGHTNESS_UV_LEFT", 840, { 0, 1 }, INTERIOR_LIGHTS, "Left Instrument Board Brightness (UV)")
+F4U_1D:defineFloat("INTERIOR_INSTRUMENT_BOARD_LAMP_BRIGHTNESS_UV_RIGHT", 841, { 0, 1 }, INTERIOR_LIGHTS, "Right Instrument Board Brightness (UV)")
+F4U_1D:defineFloat("INTERIOR_PANEL_LAMP_BRIGHTNESS_WHITE_LEFT", 938, { 0, 1 }, INTERIOR_LIGHTS, "Left Panel Brightness (White)")
+F4U_1D:defineFloat("INTERIOR_PANEL_LAMP_BRIGHTNESS_WHITE_RIGHT", 939, { 0, 1 }, INTERIOR_LIGHTS, "Right Panel Brightness (White)")
+F4U_1D:defineFloat("INTERIOR_INSTRUMENT_BOARD_LAMP_BRIGHTNESS_WHITE_LEFT", 940, { 0, 1 }, INTERIOR_LIGHTS, "Left Instrument Board Brightness (White)")
+F4U_1D:defineFloat("INTERIOR_INSTRUMENT_BOARD_LAMP_BRIGHTNESS_WHITE_RIGHT", 941, { 0, 1 }, INTERIOR_LIGHTS, "Right Instrument Board Brightness (White)")
 
 -- Interior Model
--- local INTERIOR_MODEL = "Interior Model"
+local INTERIOR_MODEL = "Interior Model"
+
+F4U_1D:defineFloat("INTERIOR_MODEL_PANEL_ROTATION_X", 702, { -1, 1 }, INTERIOR_MODEL, "Panel Rotation (X Axis)")
+F4U_1D:defineFloat("INTERIOR_MODEL_PANEL_SHAKE_X", 703, { -1, 1 }, INTERIOR_MODEL, "Panel Shake (X Axis)")
+F4U_1D:defineFloat("INTERIOR_MODEL_PANEL_SHAKE_Y", 704, { -1, 1 }, INTERIOR_MODEL, "Panel Shake (Y Axis)")
+F4U_1D:defineFloat("INTERIOR_MODEL_CANOPY_POSTION", 38, { 0, 1 }, INTERIOR_MODEL, "Position of Canopy")
 
 -- Exterior Lights
--- local EXTERIOR_LIGHTS = "Exterior Lights"
+local EXTERIOR_LIGHTS = "Exterior Lights"
+
+F4U_1D:defineFloatFromDrawArgument("EXT_LIGHT_NAV_L", 190, EXTERIOR_LIGHTS, "Left Nav Light (Red)")
+F4U_1D:defineFloatFromDrawArgument("EXT_LIGHT_NAV_R", 191, EXTERIOR_LIGHTS, "Right Nav Light (Green)")
+F4U_1D:defineFloatFromDrawArgument("EXT_LIGHT_NAV_AFT", 192, EXTERIOR_LIGHTS, "Aft Nav Light (White)")
+F4U_1D:defineFloatFromDrawArgument("EXT_LIGHT_RECONGITION_RED", 200, EXTERIOR_LIGHTS, "Recognition Light (Red)")
+F4U_1D:defineFloatFromDrawArgument("EXT_LIGHT_RECONGITION_GREEN", 201, EXTERIOR_LIGHTS, "Recognition Light (Green)")
+F4U_1D:defineFloatFromDrawArgument("EXT_LIGHT_RECONGITION_AMBER", 202, EXTERIOR_LIGHTS, "Recognition Light (Amber)")
+F4U_1D:defineFloatFromDrawArgument("EXT_LIGHT_FORMATION", 88, EXTERIOR_LIGHTS, "Formation Lights (Blue)")
+F4U_1D:defineBitFromDrawArgument("EXT_LIGHT_APPROACH", 208, EXTERIOR_LIGHTS, "Approach Light (Green)")
 
 -- Exterior Model
--- local EXTERIOR_MODEL = "Exterior Model"
+local EXTERIOR_MODEL = "Exterior Model"
+
+F4U_1D:defineFloatFromExternalDrawArgument("EXT_GEAR_TAIL_POS", 0, { 0, 1 }, EXTERIOR_MODEL, "Tail Gear Position")
+F4U_1D:defineFloatFromExternalDrawArgument("EXT_GEAR_LEFT_POS", 5, { 0, 1 }, EXTERIOR_MODEL, "Left Gear Position")
+F4U_1D:defineFloatFromExternalDrawArgument("EXT_GEAR_RIGHT_POS", 3, { 0, 1 }, EXTERIOR_MODEL, "Right Gear Position")
+F4U_1D:defineFloatFromExternalDrawArgument("EXT_GEAR_TAIL_WOW", 1, { 0, 1 }, EXTERIOR_MODEL, "Weight On Wheels Tail Gear")
+F4U_1D:defineFloatFromExternalDrawArgument("EXT_GEAR_LEFT_WOW", 6, { 0, 1 }, EXTERIOR_MODEL, "Weight On Wheels Left Gear")
+F4U_1D:defineFloatFromExternalDrawArgument("EXT_GEAR_RIGHT_WOW", 4, { 0, 1 }, EXTERIOR_MODEL, "Weight On Wheels Right Gear")
+F4U_1D:defineFullRangeFloatFromExternalDrawArgument("EXT_GEAR_TAIL_ROT", 2, EXTERIOR_MODEL, "Tail Gear Rotation")
+F4U_1D:defineFloatFromExternalDrawArgument("EXT_GEAR_TAIL_HOOK_POS", 25, { 0, 1 }, EXTERIOR_MODEL, "Tail Hook Position")
+F4U_1D:defineFullRangeFloatFromExternalDrawArgument("EXT_GEAR_TAIL_HOOK_ROT", 26, EXTERIOR_MODEL, "Tail Hook Rotation")
+F4U_1D:defineFloatFromExternalDrawArgument("EXT_WINGS_FOLD_POS", 8, { 0, 1 }, EXTERIOR_MODEL, "Folded Wings Position")
+F4U_1D:defineFloatFromExternalDrawArgument("EXT_WINGS_FLAPS_RIGHT_POS", 9, { 0, 1 }, EXTERIOR_MODEL, "Right Flaps Position")
+F4U_1D:defineFloatFromExternalDrawArgument("EXT_WINGS_FLAPS_LEFT_POS", 10, { 0, 1 }, EXTERIOR_MODEL, "Left Flaps Position")
+F4U_1D:defineFullRangeFloatFromExternalDrawArgument("EXT_WINGS_AILERON_RIGHT_POS", 11, EXTERIOR_MODEL, "Right Aileron Position")
+F4U_1D:defineFullRangeFloatFromExternalDrawArgument("EXT_WINGS_AILERON_LEFT_POS", 12, EXTERIOR_MODEL, "Left Aileron Position")
+F4U_1D:defineFullRangeFloatFromExternalDrawArgument("EXT_TAIL_ELEVATOR_LEFT_POS", 16, EXTERIOR_MODEL, "Left Elevator Position")
+F4U_1D:defineFullRangeFloatFromExternalDrawArgument("EXT_TAIL_ELEVATOR_RIGHT_POS", 15, EXTERIOR_MODEL, "Right Elevator Position")
+F4U_1D:defineFullRangeFloatFromExternalDrawArgument("EXT_TAIL_RUDDER_POS", 17, EXTERIOR_MODEL, "Rudder Position")
+F4U_1D:defineFloatFromExternalDrawArgument("EXT_COWL_FLAPS_POS", 277, { 0, 1 }, EXTERIOR_MODEL, "Cowl Flaps Position")
+F4U_1D:defineFloatFromExternalDrawArgument("EXT_OIL_COOLER_FLAP_POS", 278, { 0, 1 }, EXTERIOR_MODEL, "Oil Cooler Flap Position")
+F4U_1D:defineFloatFromExternalDrawArgument("EXT_INTERCOOLER_FLAP_POS", 279, { 0, 1 }, EXTERIOR_MODEL, "Intercooler Flap Position")
 
 -- Radios
 F4U_1D:defineReadWriteRadio("RADIO_C_30A", 8, 7, 3, 1000, "C-30A")
